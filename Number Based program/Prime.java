@@ -2,8 +2,11 @@ public class Prime
 {
 	public static void main(String[] args)
 	{
-		isPrime(663153371);
+		TestPrime.isPrime(663153371);
 	}
+}
+class TestPrime
+{
 	public static void isPrime(int a)
 	{
 		if(a==0 || a==1)
