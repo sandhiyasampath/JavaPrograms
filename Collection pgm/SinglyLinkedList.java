@@ -30,6 +30,15 @@ public class SinglyLinkedList implements MyLinkedList {
 			reposition();
 			return o;
 		}
+		else if(pos==size-1) {
+			for(int i = 0; i<pos-1; i++)		
+				temp = temp.getNext();
+			temp.setNext(null);
+			last = temp;
+			reposition();
+			return temp.getData();
+	
+		}
 		else {
 			for(int i = 0; i<pos-1; i++)		
 				temp = temp.getNext();
