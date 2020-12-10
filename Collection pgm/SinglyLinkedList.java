@@ -4,7 +4,22 @@ public class SinglyLinkedList implements MyLinkedList {
 	private long size;
 	private Node head;
 	private Node last;
-
+	
+	public long getSize() {
+		return size;
+	}
+	public Node getHead() {
+		return head;
+	}
+	public void setHead(Node head) {
+		this.head = head;
+	}
+	public Node getLast() {
+		return last;
+	}
+	public void setLast(Node last) {
+		this.last = last;
+	}
 	public SinglyLinkedList() {
 		// TODO Auto-generated constructor stub
 	}
