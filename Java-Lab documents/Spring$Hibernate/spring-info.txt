@@ -1,0 +1,60 @@
+@Component -> above class header
+@Autowired -> above inst ref var, above setters, above param constr,
+above Collection inst var
+@Qualifier("<id>") -> after @Autowired and id should be given
+@Value -> above simple inst variables,setters,param const
+
+@PostConstruct -> above a method -> automatically 
+invoked when object created
+@PreDestroy -> above a method -> automatically 
+invoked when object is dereferenced
+
+Steps to build SpringMVC App:
+0) Dy web project -> 2.5 web module ver
+copy paste jar files, copy paste web.xml and spring-servlet.xml
+create jsps subfolder in WEB-INF. Verify if mappings
+are correct in both xmls!
+1) Build HomeController
+2) Build Home.jsp
+3) Deploy and test!
+
+
+What happens when WS starts in a springmvc app?
+a) reads web.xml
+b) loads, instantiates and calls init() on DS
+c) when init() is called on DS?
+	i) Spring container starts
+	ii) SpC reads spring-servlet.xml based on convention
+	iii) as per the config, it scans our package for annotated java classes
+	iv) instantiates beans and keeps them ready
+
+What happens when a request comes in to a springmvcapp?
+1) WS looks into web.xml / -> DS
+2) DS.service(req,res) in new TOE executed
+3) DS.service(..)
+	a) asks SpC for Handler
+	b) Handler resolves URI of req to which controller and which method?
+	b.5)asks SpC for controller obj ref
+	c) invokes controllers method. method returns control string
+	c.5)asks SpC for ViewResolver
+	d) invokes IRVR and passes control string
+	e) IRVR concats config prefix with control string with suffix and returns
+	f) DS forwards req,res to view
+4) JSP executed by WS and response sent to client!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

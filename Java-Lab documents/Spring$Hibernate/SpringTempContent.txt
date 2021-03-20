@@ -1,0 +1,38 @@
+Steps to build PerformerApp:
+
+0) Eclipse-> Core Java project -> PA
+copy paste spring jar files into lib and
+add them to build path.
+copy paste spring.xml to src folder
+1) Code POJOs (by following BPs)
+2) Configure beans in spring.xml
+3) Test it
+	a) start spring container
+	b) ask spc to hand out 
+		i) inst
+		ii) DIed bean objects!
+
+
+What have we learnt to do using spring configurations using spring.xml
+1) Ask SpC to instantiate object by using no-arg constr
+2) Ask SpC to invoke param constructor and pass
+simple values (primitives or strings)
+3) Ask SpC to invoke param constr and
+pass ref to objects
+4) Ask SpC to set the properties via
+setter injection for simple values
+5) Ask SpC to set the property of inst
+ref variable using setter injection
+6) Ask SpC to inject a collection (List,Set,
+array, Map) into a setter
+7) Ask SpC to create a single object per
+class
+8) Ask SpC to create as many objs as
+many times we ask of it
+9) Ask SpC to invoke a method immediately
+after instantiation and invoke a method
+just before object is derefernced!
+
+
+
+
