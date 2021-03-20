@@ -1,0 +1,101 @@
+What is inherited of the parent to the child?
+	-> type+impl+state that is accessible
+	-> constr / initializers are not inherited!
+Do we inherit private state var of the parent to the
+child? -> NOOOOOO!
+Do child objects f the state of the parent irresp
+of access specifier? YESSS! Why so? (for honouring the
+contract of inh -> for the child to behave like a
+parent, the state of parent must exist in the child
+object!!)
+For creating and initializing state what member of
+the class has to be executed? -> Init & constructors!!
+If private parents state has to be created when child object
+is created, definitely what also has to be executed?
+-> constructor of child + constructor of parent!!
+
+So what needs to be done? => child constructor must invoke parent constructor!
+
+Process of linking a child constr to its parent constr
+-> Constructor Chaining!!
+
+Who enables CC by default? -> compiler, how so?
+By adding super() as the first statement in all 
+constructor bodies that is present in a class defn.
+*Exception-> when should CC be explicity turned
+on?? -> when subclassing a parent that has only
+parameterised constructor!!
+Who should turn on CC when subclassing a parent that has only
+param constr? SUBCLASSER!!!!
+
+Who executes CC? -> JVM!!
+In what order are the constr fired? -> Top down!!
+
+How many constructors are fired to create 1 object?
+=> constructor body of class + all of its parents 
+till the roof of the class hierarchy in reverse order!
+
+=> object in java => multi layered object!!
+
+Are constructors inherited?? NOOO!!!
+
+how many types of ref can be used to point to an obj?
+Type of class whose object has been created +
+all its parent references!
+
+
+What members can be accessed of the object is
+dictated by type of reference!!
+A a = new MD();
+=> using a, only Animal members can be accessed!
+What implementation of a inst method is executed is
+decided (runtime) based on type of object!! -> true
+for behavioural instance methods!!
+
+Can we redeclare inst / static variables of parent
+
+
+Can we inherit static methods to child class?
+Can we redeclare static methods in child class?
+
+Type of reference dictates
+
+
+Type of object dictates
+
+
+whenever the JVM encounters a new usage?
+
+
+Can we have a private abstract method?
+
+
+Can we have a static abstract method?
+
+
+Can we have a final abstract method?
+
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

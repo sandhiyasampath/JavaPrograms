@@ -1,0 +1,143 @@
+Welcome to Uttara-Batch99!
+
+Class will begin at 5:35 pm.
+
+Good evening, guys!
+
+Pgm => set of instr to which data is inputted & the data is transformed based on a logic and the result gets outputted!
+
+Intro to Java Lang
+Intro to OOP
+Intro to Java Pgm => Hello World!
+Unit stmt? Data types, variables
+	v => box in memory
+Operators
+Control Statements!
+Steps to Program!
+
+OOP in Java
+Ex H
+Collections
+IO
+Threads
+
+Variable => container in mem that can hold data!
+
+X.java
+
+main()
+{
+	stmt1;
+	stmt2;
+	stmt3;
+	...
+	
+}
+
+Compile => X.java => javac => X.class [Bytecode]
+
+X.class => JVM[Interpretter] => m/c code + exec
+
+		c:\pgms\> java X
+		
+Are java.exe & javac.exe java programs?
+m/c code pgms
+		
+	java.exe is being executed first => OS
+	
+	OS => pgm is executed as a process!!
+	
+	process => mem[100mb]!
+	
+	OS => JVM as a process => with input mem => creates 4 compartments => 
+	Stack, Heap (80%), Misc, Other
+
+	Control Flow / Flow of Control => path the JVM takes through our code to execute!
+
+	
+	1) JVM and our pgm
+	2) OS => process (mem, proc, registers, pc)
+	3) Stack, Heap, Misc, Other
+	4) var
+	5) CF/FoC, starts from the main()
+	6) heap is the biggest mem
+	7) 
+	
+	St.typed PL Java - Code, Compile, Ex
+	Dy. typed PL Python - Code, Ex
+	Dy. typed PL JS - Code, Ex || TS - JS + compiler
+	
+	St.typed PL C/C++ - code, compile->m/c code, run (OS runs it)
+	
+	Variable -> container in mem
+	-> id, Datatype
+	
+	Types of Variables
+		-> Reference[mem addr], Primitive [data directly]
+	
+	Datatypes
+	-> Reference -> if the d.t of a variable is a class/array/enum/interface
+	
+	-> Primitive -> if the d.t of a var is a integer/decimal/boolean d.t
+	
+	1) integer [are inter. as 2s power]
+		- byte - 8 bits => -128 to +127
+						=> -2ˆ7 to +2ˆ7 - 1
+		- short - 16 bits => -32k to +32k
+						=> -2ˆ15 to +2ˆ15 - 1
+		- int - 32 bits => -2B to +2B
+						=> -2ˆ31 to +2ˆ31 - 1
+		- long - 64 bits => -9MT to +9MT
+						=> -2ˆ63 to +2ˆ63 - 1
+		- char - 16 bits => 0 to 64565
+						=> 0 to +2ˆ16 - 1
+		
+	2) decimal [are inter. as 10s power]
+	- float - 32 bits => -10ˆ50 to +10ˆ50
+	- double - 64 bits => -10ˆ300 to +10ˆ300
+		
+	3) boolean
+
+	How to declare a var?
+	<d.t> <id>;
+	
+	a) int x; // primitive
+	b) byte b; // primitive
+	c) int[] arr; //ref
+	d) String str; //ref
+	e) float f; //primitive
+	f) Double d; //ref
+	g) Integer i; // ref
+	h) HelloWorld h; //ref
+	i) String[] sa; //ref
+	
+	int i = 10;
+	boolean b = true;
+	double d = 1.5;
+	byte by = 128;
+	float f = 5.5;
+	float f1 = 7;
+	int i1 = 0xBABE;
+	
+	
+Literals => constants/data typed in your keyb
+=> associated with a predetermined d.t
+
+integer => 10,100,-3 => b10 int
+		=> 0[0-7] => octal int 
+		=> 0b[0/1] => binary int
+		=> 0x[0-9,a-f] => hexa int
+		
+decimal => 1.4,5.5 => double
+		=> 1.4f, 5.5f => float
+		
+char => 'a', 'b', '1', '\u0342'
+
+string => "abc", "hellow", "1234.3434
+
+int i = "hattu"; //type-compatability
+	
+	
+
+
+

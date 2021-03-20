@@ -1,0 +1,85 @@
+There are persons. Every person has a name, age, homeaddress, officeaddress, phone number and friend. Every phone number have countr code, number, type. Every address has a home num, street, city and pin. You can ask a person to eat and sleep. When a person is asked to eat, she should be given a food to eat. A Food has a name and a type. The type of a food are either veg/non-veg. When asked to eat, the person will shout out the name of herself, the name of the food and the type and then go on to print that they will eat the food.
+When asked to sleep, the person will sleep (print out) but based on the age. If the age > 60, the person will sleep less else more. Design and test OOAD.
+
+Person
+	String name
+	String gender
+	Address homeAddress
+	Address officeAddress
+	int age
+	PhoneNum phoneNum
+	Person friend
+	Car gaadi
+	sleep()
+
+Address
+	String homeNumber
+	String city
+	String pin
+	String street
+
+Food
+	private String type;
+	private String name;
+	
+	public void setType(String s)
+	{
+		if(s=="veg" || s=="non-veg")
+			type = s;
+		else
+			SOP(......");
+	}
+
+PhoneNumber
+	String countryCode
+	String num
+	String type
+
+Car has a engine, name. Engine has a type. Name has a first name, last name. Car has a fuelTank. FuelTank has fuelQty. 
+
+Car
+	Engine engine
+	Name hesaru
+	FuelTank tank
+
+Engine
+	String type
+	
+Name
+	String firstName
+	String lastName
+
+FuelTank
+	int fuelQty
+
+
+public class Person
+{
+	private String name;
+	private int age;
+	private Address homeAddress;
+	private Address officeAddress;
+	
+	public void eat(Food f)
+	{
+		System.out.println("I am a person "+name+" going to eat food "+f.getName()+" with type "+f.getType()); 
+	
+	}
+	public void eat()
+	{
+		Food f = new Food();
+		System.out.println("I am a person "+name+" going to eat food "+f.getName()+" with type "+f.getType()); 
+	}
+}
+
+
+
+
+
+
+
+
+	
+	
+	
+	

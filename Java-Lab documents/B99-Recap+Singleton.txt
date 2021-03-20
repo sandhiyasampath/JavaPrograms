@@ -1,0 +1,119 @@
+inst var
+inst meth
+static var
+static meth
+constr
+init. - FI, II, SI
+Inner cls.
+=> Design of class => OOAD
++
+BPs
+
+class => a collection of inst methods (headers) => What can an object do? => API
+
+Encap:
+1) Reusability
+2) Easy to maintain
+3) Easy to build complex soln (Bottom-up)
+4) Easy to test!
+
+Inh & Poly:
+1) Easy to Enhance!
+2) PC => flexible & generic!
+
+When we use inh, resuability happens.
+For code resuability, we do not use inheritance!
+
+A
+	-> m1(){...}
+	
+Z
+	-> mz(){...}
+	
+C
+	-> m1(){ ... }
+	
+Composition!	
+
+B
+{
+	m2()
+	{
+		m1();
+	}
+}
+
+A x = new B();
+x.m1();...
+	
+B
+	Z z = new Z();
+	C obj = new C();
+	m1()
+	{
+		obj.m1();
+	}
+	m2()
+	{
+		obj.mz();
+	}
+	
+Vehicle
+	- start()
+Scooter extends Vehicle
+{
+	
+}
+
+Object class
+	- root the entire java class hierarchy
+	- every class inherits from Object class
+	- the parent of every class!
+	- no state (inst v), no st v, no init, no inner classes, no param constr, 1 public no-arg empty body constr + only 9 inst methods
+		- Class getClass()
+		- Object clone()
+		- void finalize()
+		- wait() 
+		- notify()
+		- notifyAll()
+		- hashCode()
+		- toString()
+		- ...
+	
+Design a class called Moon in such a way that only one object of the class is available all the time (to all the class users).
+Moon has radius. 
+
+public class Moon
+{
+	private static Moon obj;
+	private Moon()
+	{
+	}
+	public static Moon getInstance()
+	{
+		if (obj==null)
+			obj = new Moon();
+		
+		return obj;
+	}
+}
+Test
+{
+	main()
+	{
+		Moon m1 = Moon.getInstance();
+		Moon m2 = Moon.getInstance();
+		...
+		...
+	}
+}
+
+Singleton Design Pattern.
+
+
+
+
+
+
+
+	

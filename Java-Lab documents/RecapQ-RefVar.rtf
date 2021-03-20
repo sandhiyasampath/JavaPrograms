@@ -1,0 +1,111 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww22300\viewh13760\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs64 \cf0 Recap questions:\
+\
+What OOS?\
+What OOP?\
+OOPL\
+Role CD / CU?\
+What will CD do? => \
+P.D -> OOAD -> class designs on paper => Class Definitions & test it!\
+What will CU? => OOP!\
+Steps of OOAD?\
+	0) capture req as eng stmts\
+	1) identity objects (nouns / things)\
+	2) per object => 1 class definition\
+		a) id what object has? => attributes => instance variables..\
+				i) ex values ii) range\
+		b) id what object can do? => behaviours => instance methods\
+				i) what to accept from invoker? => arg list\
+				ii) what to be returned to invoker? => ret d.t\
+				iii) what should that behaviour do? => body\
+	3) Test it!! (by creating a Tester class-> main()-> create object, ass state, invoke beh)\
+   4) Generate javadocs & release the .class file with docs to the CU!\
+\
+What are ref var?  var ass. with ref d.t(class/enum/array/interface)\
+naming conv -> camel case ->\
+What do they hold? What are they used for? (access state / invoke beh)\
+What are inst var? Diff with local var? Lifecycle? Where? How many times? Where are they accessible? Uses?\
+	Uses of local var:\
+	a) accept parameters from the invoker of the method\
+   b) to create temp var to be used only within the method\
+\
+	Uses of inst var:\
+	a) to represent the state of obj!!!\
+\
+Where are objects created in java?\
+What is the size of heap mem area?\
+What are diff ways of creating an obj?\
+What is the syntax of new usage?\
+\
+What is new? \
+Explain steps of how JVM creates an obj when\
+it encounters new usage. (new Hippo())\
+	internal steps of jvm:\
+\
+What does new return? \
+\
+Where should we capture what is returned from new?\
+	Hippo h1 = new Hippo();\
+Why Tiger t = new Hippo() is not allowed?\
+What state and behaviour can be accessed is dictated by ??\
+\
+d.t of reference!!\
+	\
+	Hippo h = new Hippo();\
+	h.name, h.size\
+	\
+D.T of reference dictates what state / beh can be accessed!\
+	h.size = 10;\
+	h.sing();\
+	h.dance();\
+\
+Can multiple ref point to same obj? \
+		\
+		Hippo h1 = new Hippo();\
+		Hippo h2 = h1;\
+\
+How to create a ref var?\
+Hippo h1, h2;\
+\
+h1 = h2 = new Hippo();\
+\
+Can 1 ref point to multiple objs at the same time? But at a diff time?\
+	Hippo h1 = new Hippo();\
+	h1 = new Hippo();\
+\
+Can you explicitly destroy an obj in java?\
+What is GC? Who invokes GC? When is GC invoked?\
+Why is GC not invoked everytime there is an unreachable garbage obj? \
+What is the use of GC? Which mem does GC work on?\
+What happens to our running pgm when GC is invoked and being run by JVM?\
+How long does the GC run?\
+How many of the unreachable objects are destroyed when GC is run?\
+Can we explicity invoke GC? Then what does System.gc() do?\
+\
+Can an unr obj become reachable?\
+When GC is invoked, does it destroy all unr obj?\
+How long does GC execute?\
+Do java programs run out of mem?\
+How to explcity make an obj available for GC? dereference it!!\
+\
+Explain steps of OOAD for a given requirement?\
+BP, a developer should follow wrt object creation.\
+	\
+create any numb of objects\
+assign state\
+invoke beh & make them interact\
+but once an obj is no longer useful, dereference it!!\
+\
+\
+\
+\
+\
+\
+\
+}

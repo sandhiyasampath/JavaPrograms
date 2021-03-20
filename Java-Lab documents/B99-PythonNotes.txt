@@ -1,0 +1,684 @@
+from datetime import datetime
+
+currSec = datetime.today().second
+odds = [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,..59]
+if currSec in odds:
+	print('this is an odd moment')
+	print('hoo haaa')
+else:
+	print('this is not so odd at all')
+	print('done')
+print('really done')
+	
+code blocks => suites
+
+no semicolon
+no braces
+no main()
+no class
+no structure
+no d.t
+
+Mental-model => TDD => Test Driven Development
+
+
+How to learn a PL?
+
+1) Introduction - Where? Why? What? History
+2) Pgm structure 
+3) Variables & DTs
+4) Operators
+5) Control Statements
+6) Function structure
+7) How to invoke functions/methods, foC, pass param, return results
+8) BIFs
+9) Strings
+10) OOPs:
+	a) Encapsulation
+	b) Inheritance
+	c) Polymorphism
+	abstraction, data hiding
+11) DS
+12) Exception handling
+13) IO
+14) Multithreading
+15) Building an app
+16) Project
+17) Persistance
+
+Python Intepreter => interactive, test.py
+
+.py => directly start with the instr.
+
+creation of a variable! 
+
+dy. typed
+
+variable => labeled box in mem, data type.
+	- id - bunch of chars - naming conventions
+	- d.t
+	
+Data types:
+number - integer, decimal, complex => int, float, complex d.t
+boolean - True / False
+DS - list, set, dictionary, tuple
+
+bit size & ranges => 
+
+i = 10 =>
+j = 5.5 => 64 bit IEEE754 decimal repre. => 10 power 300 => 15 decimal places precision
+k = 5j
+
+literals => value that you can type in keyboard
+15,0xAe,0b1110,0o12 -> int
+True, False -> bool
+10.5, 10.5e5 -> float
+10j -> complex
+'abc', "abc", '''abc''' -> string
+[1,2,3]-> list
+(1,2,3)-> tuple
+{1,2,3}-> set
+{'a':'3',..} -> dictionary
+None
+
+How to know what is the d.t of a variable? type()
+id()
+
+everything in the python world is a object!!
+
+i = 10 => an object of type int with state 10
+print(i)
+i = 20 ?? an object of type int with state 20
+
+variables -> labels / reference
+
+str = "abcd";
+
+ref counting!!
+
+Every object in the python => type,id,value
+
+
+immutable => object whose state cannot be altered!
+'abc'
+10 + 1
+11
+=> value based entities
+10 - 1 => 9
+
+immutables are sharable!!
+i = 10
+j = 10
+j = j + 1
+print(i)
+
+conversions between d.ts
+
+Operators
+
+	- arith. -> +,-,*,/,%,**,//
+	- comparsion/relational -> <,>,<=,<=,!=, ==
+	- conditional -> and, or, not
+	- bitwise -> <<, >>, &, |, ˆ
+	- special -> is, not is, in, not in, ternary
+	
+	x if cond else y
+
+Flow of Control => path the intr. takes through the code
+
+functions, CF, pass params!!
+
+BIFs:
+	help()
+	dir()
+	print()
+	type()
+	id()
+	range()
+	str()
+	int()
+	float()
+	complex()
+	bool()
+	list()
+	dict()
+	set()
+	tuple()
+	
+Conversion:
+	
+	int -> float (no loss of pr)
+	float -> int (decimal data lost)
+	int -> bool (non-0 -> True, 0 -> False)
+	bool -> int (0,1)
+	int -> complex (only real part, 0 img part)
+	float -> complex (only real part, 0 img part)
+	complex -> int  => TE
+	complex -> float => TE
+	anything -> str => works
+	str -> bool (empty->False, non-empty->True)
+	bool->None (false)
+	str -> int, float, complex -> VE
+	
+Control Statements => sy. structure to alter the control flow.
+	
+	- Conditional (Decision making) stmts
+		if
+		if else
+		if elif else
+		
+	- Looping
+		for -> iterator loop
+		while -> conditional loop
+	
+	- Branching
+		continue
+		break
+		return
+		
+	- Misc
+		pass
+		
+	if sal > 100k:
+		...
+	else:
+		...
+		if sal > 50k and...:
+			do this
+		else:
+			if sal > 30k and ...:
+				do this
+			else:
+				tell get lost...
+	
+	if salary > 100k:
+		print('join the job')
+	elif salary > 50k and good w-l bal:
+		print('no prob, I will still join')
+	elif salary > 30k and wfh is allowed and you have 30 days leave:
+		print('ok types, still go for it')
+	elif salary is 0k and you are asked to join as an intern in an exciting project:
+		print('i will still go')
+	else:
+		print('ask the comp to call you when they grow up')
+		
+		
+	stmt4
+	
+	x = 10
+	y = 16
+	if x >= 10 and y < 10:
+		print('x>10 and y<10')
+		print('x '+x)
+	elif x >=10 and y < 15:
+		print('x>10 and y<15')		
+	elif x >=10 and y < 20:
+		print('x>10 and y<25')
+	else:
+		print('in else')
+
+	
+	for i in range(1,10):
+		print(i)		
+
+
+	while cond:
+		s1
+		s2
+		s3
+	s4
+	
+Functions:
+
+a set of stmts/instr bounded by a name that can accept arguments and can return a value.
+
+def test(x,y=1):
+	print(x)
+	print(y)
+	
+test(10,20)
+
+def testa(age:int,height:float=3):
+	''' this is a function that does nothing '''
+	if isinstance(age,int) && isinstanceof(height,float):
+		pass
+	else:
+		print('yenappa...')
+
+
+testa(10)
+testa(10,30)
+testa(10,[30,50])
+
+Types:
+1) Required/Positional args
+2) Default args
+3) Keyword args
+4) Variable length args
+5) annonymous func => unnamed => lambda
+
+def testb(*x):
+	print(x)
+
+testb()
+testb(10)
+testb(1,2,3)
+testb(4,'t',True)
+
+lambda x,y : x if y <= x else y
+
+
+JBD => Jobs to be done approach!
+
+OOS => a set of objs (mimic real world objs) interacting with each other, sharing data, performing business logic, to solve a particular req.
+OOP => a set of instr to a) create design of objs b) create objs c) make them interact
+class => design of object
+OOPL => PL with syntax & semantics to create OOP
+
+CD/CU
+
+CD => OOAD => series of steps to basically the design the objects.
+req--i/p-->OOAD--o/p-->designs on paper-->class defn
+
+Object => thing (occ. mem with a structure) that has state (what obj has?) and offers behaviours (what can obj do?)
+
+state => values for attributes (has-a)
+
+class => design of an object that captures the answers to what obj has & what obj can do? 
+
+PL:
+a) how to create the designs/class?
+b) how to create the objects & mg lifecycle?
+c) how to make them interact?
+
+E, I, P -> 3 features of every OOPL -> how these features are implemented!
+
+Encapsulation -> feature to put together a set of members in a named design => class => class defn
+
+There are phones. Every phone has a name & the ability to place a call, send a message & recieve a call.
+C.D->OOAD->
+a) capture req as english stmts.
+b) id the diff types of objects.
+c) for each obj,
+	i) id attributes => what does the obj have?
+	ii) id behaviours => can do?
+	
+	Phone
+		name
+		placeCall()
+		receiveCall()
+		sendMsg()
+
+	class defn:
+	
+	class <id>:
+		suite (members)
+	
+	class Phone:
+		count = 0 #class-scoped member
+		
+		def test(): #class-scoped member
+			print('in Phone->test() '+str(Phone.count))
+			
+		def makeACall(self): #instance. method
+			print('Phone making a call')
+			
+		def __init__(self):
+			print('in init()')
+			
+
+	how to create objects?
+	
+	p1 = Phone()
+	p2 = Phone()
+
+	p1.name = 'Oppo'
+	p2.name = '1+'
+	
+	p1.type = 'mobile'
+	
+
+	class Phone:
+		
+		def __init__(self, n=''):
+			
+			if n=='':
+				self.name = 'phonu'
+			else:
+				self.name = n
+				
+		def makeACall(self):
+			print('phone '+self.name+' making a call')
+				
+	p1 = Phone()
+	p1.name
+	p2 = Phone('iphone')
+
+
+	class Person:
+		
+		def __init__(self, n,a):
+			self.name = n
+			self.age = a
+			
+	p1 = Person('Ramu',20)
+	p2 = Person('Shyamu',30)
+	
+	class Emp:
+		members
+			- variables - instance var (has-a), class scoped var (single-copy)
+			- methods - a func in a class
+				- instance (behaviours), class scoped 
+				- special method - init method.
+	
+	class Emp:
+		'''This class defines an Employee'''
+		count = 0 # class scoped
+		
+		def displayCount(): # class scoped
+			print(Emp.count)
+
+		def dance(self):
+			if self.age <= 20:
+				print('Emp dancing '+self.name+'doing break dance')
+			else:
+				print('Emp dancing '+self.name+'doing naagin dance')
+
+		def __init__(self, n='', a=0):
+			Emp.count += 1
+			print('in init()')
+			self.name = n
+			self.age = a
+			
+		
+	Emp.displayCount() # 0
+	Emp.count += 1
+	print(Emp.count) # 1
+	
+	Emp.dance() X error!
+	
+	e1 = Emp()
+	e2 = Emp()
+	
+	e1.dance()
+		
+	e1 = e2
+
+	e1.dance()
+	
+	e1.name = 'Ramu'
+	e2.name = 'Bheemu'
+	e1.name = 'Bheemramu'
+	
+	del e1.name
+	
+	del e2
+	del e1
+	
+	e3 = Emp()
+	
+	print(e1.name) X AttributeError
+	print(e2.name)
+	
+	class Dev:
+		count = 0 # class scoped
+	
+	//attribute injection & value injection
+	
+	e4 = Emp()
+	
+	e5 = Emp('Shyamu')
+	e6 = Emp('Maamu',40)
+	
+	class X:
+		def __init__(self,a):
+			self.val = a 
+	
+	class Y:
+		def test(self,obj):
+			print(obj.val)
+			obj.val = 20
+	
+	
+	x = X(10)
+	print(x.val)
+	y = Y()
+	t.test(x)
+	print(x.val)
+	
+	Pen
+		inkQty => inst var => init()
+		write(self,data) => inst m
+		if self.inkQty > 0:
+			...
+	
+	Gun
+		name
+		shoot()
+		
+	class Gun:
+		
+		def __init__(self,n):
+			self.name = n
+		
+		def shoot(self):
+			print('Gun '+self.name+' shooting')
+		
+	Rifle IS-A Gun => Inheritance => feature of the lang to implement IS-A relationship b/w two classes => parent, child
+	
+	contract => whatever parent obj can do, the child obj also can do the same!
+	
+	How?
+
+	class Rifle(Gun):
+		pass
+
+	What can I do?	
+		
+	Inheritance 
+	- What is it? => IS-A relationship
+	- When? based on req!!
+	- Types => Mutiple, Multi-level
+	- What is the contract of inh?
+	- How to implement? 
+	class Mule(Monkey,Horse)
+	- Inheritance should not be broken! API
+		= class header, method headers
+	- What is inherited? 
+	members => class-scoped, instance, static, special methods
+	- Can we adding?
+	- Can we change what we inherit?
+	- What is super()
+	- What is method overriding? When to use? based on req (the how of the child for a beh is different)
+	- Which impl is picked?
+	- Can we inherit class scoped members?
+	- How to access a hidden parent member?
+	- Dunder methods? magic, special? 
+	- SOLID Principles
+	=> SRP, Open-Closed, LSP, Interface, DI
+	- what is __init__()
+	- BP for init()
+	- Every user defined class has a parent
+	- base of the entire class hierarchy - object 
+	- MRO - Method Resolution Order - left-right depth first / linearization order
+	
+	A
+		@classscoped
+		def test(cls, a):
+			pass
+			
+		def print(self):
+			pass
+			
+		def sayHNY(self):
+			pass			
+			
+	class B(A):
+		
+		def test():
+			pass
+			
+		def print(self):
+			pass
+		
+		def sayHurrah(self):
+			pass
+			
+	
+	B.test()
+	A.test()
+	
+	a = A()
+	b = B()
+	
+	B.test()
+	A.test()
+	
+	a.print()
+	b.print()
+	
+	a = B()
+	b = A()
+	
+	a.print() B's
+	b.print() A's
+	
+	a.sayHNY()
+	a.sayHurrah()
+	
+	
+	A (object)
+		
+
+	B (object)
+		m2(self)
+		m1(self)
+		
+	X(A)
+		m2(self)
+		
+	Y(B)
+	
+	C(X,Y)
+	
+	c = C()
+	c.m1()
+	c.m2()
+	
+	
+	A
+	
+B		C
+
+  D(C,B)
+	
+
+  A
+  
+  		B(A)
+
+C(A,B)
+
+	c = C()
+	c.m()
+
+ Me + delta (res) => I am good enough!
+ 
+ Me - X => I am good enough!
+ 
+ X -> wrong beliefs
+ 
+ I am not .... => story (belief based on the past)
+
+ Success => compentency => efforts with BPs (course-corrections)!
+ Life,career => driving a boat!
+	
+ 
+ 
+ 
+ 
+ 
+ 
+Jan 4th - Dunders / Magic methods!
+
+	__init__(self)
+
+DS in Python:
+
+Set:
+	- DS that holds unique elements
+	- unordered
+	- not position backed
+	- mutuable
+	- syntax 
+		- {10,20,30}
+		- union, intersect, diff, except
+	- add(ele) 	 => hashes & searches 1 bucket
+	- search(ele) => hashes & searches 1 bucket
+	- remove(ele) => hashes & searches 1 bucket
+	- what DS is def not used internally in the set? - any lists (cuz lists are super slow in search operation)
+	- constant time op for search!
+	- DS - hash based DS - coll of numb. buckets!
+	
+	- what does the set do when an ele is added?
+		a) identifies bucket num for ele
+			- hash(ele) - integer based on the state of the object - used to id bucket num
+			hash(ele) => __hash__()
+		b) linear search in that bucket wrt ele
+		c) add the ele if unique else do not allow the addition
+
+		equal objects => return the same hash result!!!
+
+	What is a set?
+	What is the characteristic of a set?
+	When is an object a duplicate of another?
+		when o1==o2 returns True
+	When should we use sets?
+	How to create an empty set? set()
+	How to create a set from a list?
+	How to know the length of a set? len()
+	What are the basic methods of a set?
+		add(), remove(), union(), intersect()...pop()
+	Why type of elements can we put into a set?
+		hashable!!!!
+	
+	Does the set have to compare with all the added elements to verify if a new element is allowed to be added or not?
+	
+	What is hash function?
+		a) dunder function/method declared in object class
+		b) returns an integer
+		c) invoked when hash(ele) BIF is called
+		d) equal ele will return the same hash number!!!
+		f) use -> used by hash-impl DS (sets & Dictionaries)!!!
+		g) when is it used?
+			set->add(ele)
+					-> hash(ele) -> num -> converted to id a bucket
+					-> linear search the ele in that bucket
+					-> add if found to be unique
+	
+		By default in any object that inherits eq() & hash() from object class:
+			eq() will return true when eq() invoked on same object with same ref
+			hash() -> returns a random num
+ 
+	class Manu
+		name
+		age
+		
+		str()
+		eq() => based on state (name,age)
+		hash() => use state(name,age) to arrive at num
+		
+	class Elephant
+		name
+		
+	When a set is created:
+		-> a number of buckets are internally created id by a number
+		-> set->add(ele)
+					-> hash(ele) -> num -> converted to id a bucket
+					-> linear search the ele in that bucket
+					-> add if found to be unique
+
+ 
+ 
+ 
+

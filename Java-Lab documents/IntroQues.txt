@@ -1,0 +1,33 @@
+Questions:
+
+1) What is a pgm? PL?
+2) What should be the instructions format for the
+processor to execute the program? Is this going to be
+the same for all devices?
+3) What is a platform? What is platform dependence?
+4) What domains is java used for building apps?
+5) What are the 3 tenets of every application?
+6) What are the flavours of java?
+7) What are buzzwords associated with Java?
+8) Explain how is java program platform independent?
+9) What is JDK? What is JRE? what do they contain?
+Who should install what?
+
+	JDK = > Compiler + JVM + Dev Tools + runtime library
+	JRE => JVM + runtime library
+
+10) What part of java is platform dependent? -> jvm / rt.lib -> JRE
+11) What is the difference between compiler and interpreter?
+12) What is JVM? rt.lib? What do they do?
+13) What is BYTECODE? What does it not contain?
+14) How Java is Robust, Simple, I18N?
+15) Does Java support pointers?
+
+JRE -> customer -> JVM + rt.lib => Java Platform!!!
+JDK -> developer -> JRE(JVM + rt.lib) + dev tools + java compiler
+
+
+
+
+
+ 
