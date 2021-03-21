@@ -1,0 +1,59 @@
+How to install HSQLDB?
+
+1) Goto http://hsqldb.org/
+2) Click download link at the top
+3) Download hsqldb-2.x.y.zip. Unzip the contents to a folder.
+4) The lib folder contains hsqldb.jar which contains the driver and db.
+
+How to start the db?
+
+1) 
+In Windows: Go to bin folder of hsqldb and click on runserver.bat
+Then click on runManagerSwing.bat and select 3rd option from dropdown
+
+Now you can create the table and test sql.
+
+create table customer(name varchar(100),email varchar(100),pass varchar(100)).
+
+
+In Linux:
+
+Start 2 command prompts. In both of them, goto the folder where you have unzipped hsqldb (folder which contains lib). 
+Ex: cd C:\hsqldb\hsqldb-2.2.6\hsqldb <hit enter>
+
+a) In one command prompt copy paste below command
+
+java -cp lib/hsqldb.jar org.hsqldb.server.Server --database.0 file:mydb --dbname.0 xdb
+
+The server should start with output something like this:
+[Server@1b15692]: [Thread[main,5,main]]: checkRunning(false) entered
+[Server@1b15692]: [Thread[main,5,main]]: checkRunning(false) exited
+[Server@1b15692]: Startup sequence initiated from main() method
+[Server@1b15692]: Could not load properties from file
+[Server@1b15692]: Using cli/default properties only
+[Server@1b15692]: Initiating startup sequence...
+[Server@1b15692]: Server socket opened successfully in 9 ms.
+[Server@1b15692]: Database [index=0, id=0, db=file:mydb, alias=xdb] opened sucessfully in 2678 ms.
+[Server@1b15692]: Startup sequence completed in 2712 ms.
+[Server@1b15692]: 2012-01-06 14:59:46.444 HSQLDB server 2.2.6 is online on port 9001
+[Server@1b15692]: To close normally, connect and execute SHUTDOWN SQL
+[Server@1b15692]: From command line, use [Ctrl]+[C] to abort abruptly
+
+b) In the other command prompt copy paste below command. This will open the UI manager for db.
+java -cp lib/hsqldb.jar org.hsqldb.util.DatabaseManagerSwing
+
+You will get a dropdown. Select HSQL Database Engine Server option.
+
+Paste this into the URL: textbox
+
+jdbc:hsqldb:hsql://localhost/xdb
+
+This is the URL we will use to connect using JDBC.
+
+Now you can create tables, do selects, sql commands in the UI.
+
+Execute this command:
+
+create table customer(name varchar(100),email varchar(100),pass varchar(100)).
+
+Now you can run the MVCapp in Eclipse to test the app!!

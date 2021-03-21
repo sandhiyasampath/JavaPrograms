@@ -1,0 +1,45 @@
+0) Go through working of Insect.java & other .java files 
+given in this lab first.
+
+1) Create an Animal class. An Animal can eat and sleep. 
+When an Animal is asked to sleep, it closes its eyes and sleeps.
+We do not know how an Animal eats. What kind of method will you code for eat? 
+Mark eat method abstract (no body => public void eat();). See if Animal.java will compile. 
+Mark Animal class abstract and see if the compilation succeeds. Create an instance variable in Animal as String name. 
+Create a no-arg constructor and parameterised constructor (which accepts a string and assigns it to name). 
+Put SOPs in both the constructors. Is compilation succeeding? 
+Can you have constructors in an abstract class? Create a TestAnimal class with main(). 
+Try to create an object of Animal. Does it work? Now create a Croc extends Animal, add a new method swim() with SOP, 
+create one no-arg constructor with SOP and parameterised constructor which accepts string and passes the string to parent constructor by invoking super(s). In Tester class, create a croc object and invoke eat() and sleep(). What SOPs are being printed out? Are you able to understand this? Override sleep() in Croc and see which implementation gets picked up by executing same tester class.
+
+2) Create an abstract class Device. Create a Device no-arg
+constructor with SOP.
+Now in TestDevice, create main(). Try to test if you can
+create an object of Device. Can you do so? Now add a 
+static method to Device with an SOP. Now see if you can 
+call this from TestDevice. 
+Now add a doSomething() instance method which is abstract.
+Now create a subclass of Device called Phone. A Phone
+can be used to call a given number (String). How a 
+phone calls, we do not know. What will you mark call()
+as? Is it still mandatory to override doSomething() in 
+Phone? Check. Now create a MobilePhone that IS-A Phone.
+How many methods you will have to override in this class
+for compilation to succeed. Now create a Person with a 
+name and use() method that accepts a Device d as paramter.
+The Person will make the device to doSomething when asked
+to use (meaning in use(Device d), invoke d.doSomething()).
+Test it by passing a MobilePhone object and verify which
+implementations are picked up.
+
+3) Add additional code to check the following:
+a) Can an abstract class/method be marked final? Why not?
+b) Can an abstract class/method be marked static? Why not?
+c) Can an abstract class inherit from another abstract class?
+Should any method have to be mandatorily overridden?
+d) Can a concrete class be inherited by an abstract class? Test it.
+e) Can an abstract class have initializer/constructors? Test it
+f) Can you have a private abstract method? Test it.
+
+For all these above, you have to just test if compilation succeeds.
+

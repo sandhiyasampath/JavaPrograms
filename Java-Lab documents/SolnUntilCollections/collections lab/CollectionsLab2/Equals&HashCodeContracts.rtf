@@ -1,0 +1,76 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+{\fonttbl\f0\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww17520\viewh13040\viewkind0
+\deftab720
+\pard\pardeftab720
+
+\f0\fs52 \cf0 contract of equals:\
+if 2 objs state are the same,\
+equals should return true\'85\
+who should implement? Class Designer\
+How to implement? -> override equals() in every class that has state\
+a.equals(a) -> true - reflexive\
+if a.equals(b) -> true, \
+b.equals(a) -> true - commutative\
+if a.equals(b) -> true, \
+b.equals(c) -> true, then a.equals(c) -> true! - transitive\
+who uses equals()?\
+> user of our class to compare 2 objs\
+> contains,remove,indexOf,add() of Set internally depend on equals!\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+contract of hashCode():\
+2 equal objects should return same int when hashCode() is called on them individually! (bucket num)\
+who should implement? Class Designer\
+How to implement? -> override hashCode() after overriding equals(). How to?\
+convert the state used in equals to a string and then return hashCode() of that string.\
+who uses hashCode()?\
+only Hashed implemented collections!!!\
+-> HashSet, LinkedHashSet, HashMap, HashTable, LinkedHashMap, *Hash*\
+\
+Used for identifying bucket num!!!\
+\
+benefit:\
+super fast search, addition of unique, removal\'85\
+\
+methodology of add() working in HashSet():\
+Set col = new HashSet();\
+col.add(o1); //a)\
+col.add(o2); //b)\
+col.add(o3); //c)\
+\
+a) In add() of HS which accepts Object o,\
+	o1.hashCode() is called to identify bucket num.\
+	because bucket is empty, o ele is simply added\
+	and true is returned to invoker\
+\
+b) In add() of HS which accepts Object o,\
+	o2.hashCode() is called to identify bucket num.\
+	if that bucket is empty, simply add and return true\
+	else\
+	search sequentially amongst all the bucket elements\
+whether an ele like o2 exists by invoking equals()! if\
+any ele is found to be equal, return false and do not\
+add this element!\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}

@@ -1,0 +1,19 @@
+
+How to find num of occ per char in a string?
+Brute force:
+Loop to access each char from string
+	Loop to compare char with every other char
+		increment if equal
+	endloop
+endloop
+
+Every char is a integer!
+create an int array with 26 size
+loop over the string, access char
+	array[char-'a']++;
+endloop
+
+
+
+
+

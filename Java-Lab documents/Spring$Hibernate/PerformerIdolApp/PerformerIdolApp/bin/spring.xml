@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="soma" class="com.uttara.test.Juggler"/>
+	
+	<bean id="mamu" class="com.uttara.test.Juggler">
+		<constructor-arg value="10" />
+	</bean>
+	<bean id="latha" class="com.uttara.test.Singer"/>
+	<bean id="asha" class="com.uttara.test.Singer">
+		<constructor-arg value="Hum dil de chuke sanam..."/>
+	</bean>
+	
+	<bean id="mithunda" class="com.uttara.test.Dancer">
+		<constructor-arg value="BreakDance"/>
+	</bean>
+	
+	<bean id="was" class="com.uttara.test.WorldStagePoem"/>
+
+	<bean id="ramu" class="com.uttara.test.PoeticJuggler">
+		<constructor-arg value="10"/>
+		<constructor-arg ref="was"/>
+	</bean>
+	
+	<bean id="piana" class="com.uttara.test.Piano"/>
+	<bean id="guitar" class="com.uttara.test.Guitar"/>
+	<bean id="tabla" class="com.uttara.test.Tabla"/>
+
+	<bean id="shankar" class="com.uttara.test.Instrumentatlist">
+		
+		<property name="name" value="Ravi" />
+		<property name="instrument">
+			<bean class="com.uttara.test.Guitar"></bean>
+		</property>
+	</bean>
+
+	<bean id="mani" class="com.uttara.test.Instrumentatlist">
+		<constructor-arg value="remo"/>
+		<property name="instrument" ref="guitar"/>
+	</bean>
+	
+	<bean id="audi" class="com.uttara.test.Auditorium"
+	init-method="turnOnLights" destroy-method="turnOffLights"/>
+	
+	<bean id="ticket" class="com.uttara.test.Ticket" scope="prototype"/>
+	
+	<bean id="oneManBand" class="com.uttara.test.OneManBand">
+		<property name="instruments">
+			<list>
+				<ref bean="tabla"/>
+				<ref bean="guitar"/>
+				<ref bean="piana"/>
+			</list>
+		</property>
+	</bean>
+	
+</beans>
+
+<!--  
+	Poem was = new WorldStagePoem();
+	PoeticJuggler ramu = new PoeticJuggler(10,was);
+	
+ -->
+
+
+
+
